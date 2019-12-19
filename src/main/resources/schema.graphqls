@@ -1,0 +1,16 @@
+type Person{
+    id: String!,
+	name: String!,
+	age: Int
+}
+
+type Company{
+	id: String!,
+	name: String!,
+}
+
+type Query{
+	allPerson: [Person]!
+	allCompany: [Company]!
+	getPerson(id:String!): Person!
+}
