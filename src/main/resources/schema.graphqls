@@ -14,3 +14,8 @@ type Query{
 	allCompany: [Company]!
 	getPerson(id:String!): Person!
 }
+
+type Mutation{
+	addPerson(name: String!,age: Int!): Person!
+	addCompany(name: String!): Company!
+}

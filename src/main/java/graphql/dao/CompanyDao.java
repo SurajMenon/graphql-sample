@@ -12,12 +12,17 @@ public enum CompanyDao {
 
 	public Map<String,Company> companyDb = new HashMap<>();
 	
+	//For Query
 	public Company geCompanyById(String companyId) {
 		return companyDb.get(companyId);
 	}
 
-	
 	public List<Company> getAllCompany() {
 		return new ArrayList<Company>(companyDb.values());
+	}
+	
+	public Company addCompany(Company c) {
+		companyDb.put(c.getId(),c);
+		return c;
 	}
 }
