@@ -1,0 +1,40 @@
+#mutation {
+#	addPerson(name:"Harry",age:21){
+#    name
+#  }
+#}
+  
+#mutation {
+#	addCompany(name:"Hogwarts"){
+#    name
+#  }
+#}  
+
+#query {
+#  allCompany{
+#    name
+#    id
+#  }
+#}
+
+#query{
+#  getPerson(id:"1"){
+#    name
+#  }
+#}
+
+
+query{
+  allCompany{
+    name
+    employee{
+      name
+    }
+  }
+}
+
+#mutation{
+#  addPersonWithCompany(name:"Harry",age:21,companyId:"1"){
+#    name
+#  }
+#}

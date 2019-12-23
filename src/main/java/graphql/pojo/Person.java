@@ -5,6 +5,9 @@ public class Person {
 	private String id;
 	private String name;
 	private Integer age;
+	
+	// for joins .. note that this field is not in schema
+	private String companyId;
 
 	public Person(String id, String name, Integer age) {
 		this.id = id;
@@ -12,8 +15,13 @@ public class Person {
 		this.age = age;
 	}
 
-	// for joins .. note that this field is not in schema
-	private String companyId;
+	public Person(String id, String name, Integer age,String companyId) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.companyId = companyId;
+	}
+	
 
 	public String getName() {
 		return name;

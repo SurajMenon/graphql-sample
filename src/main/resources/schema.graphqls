@@ -1,12 +1,13 @@
 type Person{
-    id: String!,
-	name: String!,
+    id: String!
+	name: String!
 	age: Int
 }
 
 type Company{
-	id: String!,
-	name: String!,
+	id: String!
+	name: String!
+	employee: [Person]!
 }
 
 type Query{
@@ -15,7 +16,9 @@ type Query{
 	getPerson(id:String!): Person!
 }
 
+#Allow to add person with aor without a company
 type Mutation{
 	addPerson(name: String!,age: Int!): Person!
+	addPersonWithCompany(name: String!,age: Int!, companyId:String!): Person!
 	addCompany(name: String!): Company!
 }

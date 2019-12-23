@@ -1,0 +1,21 @@
+Currently the schema does not reprsent Person to Company mapping.
+
+For this, schema change is needed : 
+
+	type Person{
+    	id: String!
+		name: String!
+		age: Int
+		company: Company
+	}
+	
+And a Person Resolver needs to be implemented. Like :
+
+	@Component
+	public class PersonResolver implements GraphQLResolver<Person> {
+	
+		//Getting company from person
+		public Company getCompany(Person person) {
+			return CompanyDao.INSTANCE.getCompanyById(person.getCompanyId());
+		}
+	}

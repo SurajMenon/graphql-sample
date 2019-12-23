@@ -19,9 +19,16 @@ public class PersonMutation implements GraphQLMutationResolver {
 	private PersonDao personDao = PersonDao.INSTANCE;
 
 	// implements :: addPerson(name: String!,age: Int!): Person!
-	public Person addPerson(String name,Integer age) {
+	public Person addPerson(String name, Integer age) {
 		String id = UUID.randomUUID().toString();
-		Person p = new Person(id, name,age);
+		Person p = new Person(id, name, age);
+		return personDao.addPerson(p);
+	}
+
+	// implements :: addPersonWithCompany(name: String!,age: Int!, companyId:String!): Person!
+	public Person addPersonWithCompany(String name, Integer age, String companyId) {
+		String id = UUID.randomUUID().toString();
+		Person p = new Person(id, name, age, companyId);
 		return personDao.addPerson(p);
 	}
 

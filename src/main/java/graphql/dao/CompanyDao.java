@@ -13,7 +13,7 @@ public enum CompanyDao {
 	public Map<String,Company> companyDb = new HashMap<>();
 	
 	//For Query
-	public Company geCompanyById(String companyId) {
+	public Company getCompanyById(String companyId) {
 		return companyDb.get(companyId);
 	}
 
